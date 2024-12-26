@@ -18,6 +18,8 @@ mkdir $dist
 
 # crop cover to yt thumbnail
 convert $cover -resize 1920x -gravity center -crop 1920x1080+0+0 +repage yt-thumb.jpg
+# resize cover for smaller requirement
+convert $cover -resize 600x cover-600x600.jpg
 
 # generate the full length video
 ffmpeg -loop 1 -i ./yt-thumb.jpg -i ./audio.wav -c:v libx264 -c:a aac -b:a 320k -shortest -pix_fmt yuv420p ./dist/16-9.mp4

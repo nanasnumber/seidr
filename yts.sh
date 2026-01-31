@@ -6,7 +6,7 @@ videoSrc=$1
 userOffset=${4:-0}  # default to 0 if not passed
 baseOffset=656      # center position
 finalOffset=$((baseOffset + userOffset))
-videoID=$(~/program/yt-dlp/yt-dlp --get-id $videoSrc)
+videoID=$(~/program/yt-dlp/yt-dlp.sh --get-id $videoSrc)
 renderDIR=render
 cacheDIR=cache
 
